@@ -12,6 +12,7 @@ import GoogleGenerativeAI
 class MovieAIViewModel: ObservableObject {
     private var geminiModel: GenerativeModel?
     @Published var movie: [MovieAIModel] = []
+    @Published var isLoading = false
     @Published var isReady = false
     
     init() {
@@ -19,6 +20,8 @@ class MovieAIViewModel: ObservableObject {
     }
     
     func generateMovie(genre: Genre, year: YearMovie) async {
+        isLoading = true
+        defer {isLoading = false}
         let genreString = genre.rawValue
         let yearString = year.rawValue
         
@@ -61,7 +64,7 @@ class MovieAIViewModel: ObservableObject {
             do {
                 let apiKey: String = try await RemoteConfigService.shared.fetchConfig(forKey: .apiKey)
                 self.geminiModel = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
-                self.isReady = true
+//                self.isLoading = true
             } catch {
                 print("Error Configuring GenerativeModel: \(error)")
             }
