@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCsSmkJLHAEXF9jIzk0Yo_oSxzJ2O7J1Fg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>572798435717</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.bcas.MovieAI</string>
+	<key>PROJECT_ID</key>
+	<string>placesai-affan</string>
+	<key>STORAGE_BUCKET</key>
+	<string>placesai-affan.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:572798435717:ios:4ad5a275d4c41c0a00c4ec</string>
+</dict>
+</plist>

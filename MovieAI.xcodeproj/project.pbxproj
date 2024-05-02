@@ -11,6 +11,15 @@
 		3E1A73CD2BE335FF00A78B19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A73CC2BE335FF00A78B19 /* ContentView.swift */; };
 		3E1A73CF2BE3360000A78B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A73CE2BE3360000A78B19 /* Assets.xcassets */; };
 		3E1A73D22BE3360000A78B19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A73D12BE3360000A78B19 /* Preview Assets.xcassets */; };
+		3E1A73DD2BE3379800A78B19 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A73DC2BE3379800A78B19 /* Constant.swift */; };
+		3E1A73E02BE33A8100A78B19 /* MovieAIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A73DF2BE33A8100A78B19 /* MovieAIModel.swift */; };
+		3E1A73E32BE346E200A78B19 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E1A73E22BE346E200A78B19 /* GoogleGenerativeAI */; };
+		3E1A73E62BE3475C00A78B19 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 3E1A73E52BE3475C00A78B19 /* FirebaseRemoteConfig */; };
+		3E1A73E82BE3475C00A78B19 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3E1A73E72BE3475C00A78B19 /* FirebaseRemoteConfigSwift */; };
+		3E1A73EA2BE347A300A78B19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A73E92BE347A300A78B19 /* GoogleService-Info.plist */; };
+		3E1A73ED2BE348B900A78B19 /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A73EC2BE348B900A78B19 /* RemoteConfigService.swift */; };
+		3E1A73F02BE349E100A78B19 /* MovieAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A73EF2BE349E100A78B19 /* MovieAIViewModel.swift */; };
+		3E1A73F22BE3520800A78B19 /* MovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A73F12BE3520800A78B19 /* MovieRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,12 @@
 		3E1A73CC2BE335FF00A78B19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3E1A73CE2BE3360000A78B19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E1A73D12BE3360000A78B19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3E1A73DC2BE3379800A78B19 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3E1A73DF2BE33A8100A78B19 /* MovieAIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAIModel.swift; sourceTree = "<group>"; };
+		3E1A73E92BE347A300A78B19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E1A73EC2BE348B900A78B19 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
+		3E1A73EF2BE349E100A78B19 /* MovieAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAIViewModel.swift; sourceTree = "<group>"; };
+		3E1A73F12BE3520800A78B19 /* MovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E1A73E82BE3475C00A78B19 /* FirebaseRemoteConfigSwift in Frameworks */,
+				3E1A73E32BE346E200A78B19 /* GoogleGenerativeAI in Frameworks */,
+				3E1A73E62BE3475C00A78B19 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +69,14 @@
 		3E1A73C92BE335FF00A78B19 /* MovieAI */ = {
 			isa = PBXGroup;
 			children = (
-				3E1A73CA2BE335FF00A78B19 /* MovieAIApp.swift */,
-				3E1A73CC2BE335FF00A78B19 /* ContentView.swift */,
-				3E1A73CE2BE3360000A78B19 /* Assets.xcassets */,
+				3E1A73EE2BE349A200A78B19 /* ViewModel */,
+				3E1A73EB2BE348A100A78B19 /* Config */,
+				3E1A73E92BE347A300A78B19 /* GoogleService-Info.plist */,
+				3E1A73DE2BE339CA00A78B19 /* Services */,
+				3E1A73DB2BE3375000A78B19 /* Model */,
+				3E1A73D82BE3360A00A78B19 /* App */,
+				3E1A73D92BE3361000A78B19 /* View */,
+				3E1A73DA2BE3361600A78B19 /* Resources */,
 				3E1A73D02BE3360000A78B19 /* Preview Content */,
 			);
 			path = MovieAI;
@@ -65,6 +88,63 @@
 				3E1A73D12BE3360000A78B19 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3E1A73D82BE3360A00A78B19 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73CA2BE335FF00A78B19 /* MovieAIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3E1A73D92BE3361000A78B19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73CC2BE335FF00A78B19 /* ContentView.swift */,
+				3E1A73F12BE3520800A78B19 /* MovieRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E1A73DA2BE3361600A78B19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73CE2BE3360000A78B19 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E1A73DB2BE3375000A78B19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73DF2BE33A8100A78B19 /* MovieAIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E1A73DE2BE339CA00A78B19 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73DC2BE3379800A78B19 /* Constant.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3E1A73EB2BE348A100A78B19 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73EC2BE348B900A78B19 /* RemoteConfigService.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		3E1A73EE2BE349A200A78B19 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A73EF2BE349E100A78B19 /* MovieAIViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +163,11 @@
 			dependencies = (
 			);
 			name = MovieAI;
+			packageProductDependencies = (
+				3E1A73E22BE346E200A78B19 /* GoogleGenerativeAI */,
+				3E1A73E52BE3475C00A78B19 /* FirebaseRemoteConfig */,
+				3E1A73E72BE3475C00A78B19 /* FirebaseRemoteConfigSwift */,
+			);
 			productName = MovieAI;
 			productReference = 3E1A73C72BE335FF00A78B19 /* MovieAI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +196,10 @@
 				Base,
 			);
 			mainGroup = 3E1A73BE2BE335FF00A78B19;
+			packageReferences = (
+				3E1A73E12BE346E200A78B19 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+				3E1A73E42BE3475C00A78B19 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3E1A73C82BE335FF00A78B19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E1A73EA2BE347A300A78B19 /* GoogleService-Info.plist in Resources */,
 				3E1A73D22BE3360000A78B19 /* Preview Assets.xcassets in Resources */,
 				3E1A73CF2BE3360000A78B19 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E1A73E02BE33A8100A78B19 /* MovieAIModel.swift in Sources */,
 				3E1A73CD2BE335FF00A78B19 /* ContentView.swift in Sources */,
 				3E1A73CB2BE335FF00A78B19 /* MovieAIApp.swift in Sources */,
+				3E1A73ED2BE348B900A78B19 /* RemoteConfigService.swift in Sources */,
+				3E1A73F22BE3520800A78B19 /* MovieRow.swift in Sources */,
+				3E1A73DD2BE3379800A78B19 /* Constant.swift in Sources */,
+				3E1A73F02BE349E100A78B19 /* MovieAIViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +437,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E1A73E12BE346E200A78B19 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google-gemini/generative-ai-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
+		3E1A73E42BE3475C00A78B19 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E1A73E22BE346E200A78B19 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E1A73E12BE346E200A78B19 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+		3E1A73E52BE3475C00A78B19 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E1A73E42BE3475C00A78B19 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		3E1A73E72BE3475C00A78B19 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E1A73E42BE3475C00A78B19 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E1A73BF2BE335FF00A78B19 /* Project object */;
 }
