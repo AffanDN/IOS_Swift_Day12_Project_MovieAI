@@ -48,39 +48,57 @@ struct ContentView: View {
                     }
                     .pickerStyle(.navigationLink)
                 }
-                // MARK: - GENERATE STORY
-                
-                Button {
-                    generateMovie()
-                    isShowing.toggle()
-                } label: {
-                    Text("Generate Movie")
-                }
-                .buttonStyle(PlainButtonStyle())
-                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity)
-                
                 
                 // MARK: - LIST ROW
-                if !isShowing {
-                    Image(systemName: "list.and.film")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .foregroundStyle(.gray)
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity)
-                        .opacity(!isShowing ? 1 : 0)
-                } else {
-                    List {
-                        ForEach(movieDataVM.movie, id: \.self) {
-                            item in
-                            VStack {
-                                MovieRow(movieai: item)
-                            }
+                List {
+                    ForEach(movieDataVM.movie, id: \.self) {
+                        item in
+                        VStack {
+                            MovieRow(movieai: item)
                         }
                     }
                 }
                 
+//                if !isShowing {
+//                    Image(systemName: "list.and.film")
+//                        .resizable()
+//                        .frame(width: 100, height: 100)
+//                        .foregroundStyle(.gray)
+//                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity)
+//                        .opacity(!isShowing ? 1 : 0)
+//                } else {
+//                    List {
+//                        ForEach(movieDataVM.movie, id: \.self) {
+//                            item in
+//                            VStack {
+//                                MovieRow(movieai: item)
+//                            }
+//                        }
+//                    }
+//                }
+                
             }
             .navigationTitle("Movie AI")
+            .padding(.bottom)
+            // MARK: - GENERATE STORY
+            
+            Button {
+                generateMovie()
+//                    isShowing.toggle()
+            } label: {
+                Text("✨ Generate Movie")
+                    .foregroundStyle(.white)
+                    .fontWeight(.bold)
+            }
+            .padding()
+            .background(Color.indigo)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .buttonStyle(PlainButtonStyle())
+            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity)
+            Text("Copyright ©️ 2024 Movie AI")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .padding(.vertical, 8)
         }
         .overlay(movieDataVM.isLoading ? ProgressView() : nil)
 
@@ -109,5 +127,19 @@ extension ContentView {
         Task{
             await movieDataVM.generateMovie(genre:selectedGenre,year:selectedYear)
         }
+    }
+}
+
+extension UIApplication {
+    var firstKeyWindow: UIWindow? {
+        return UIApplication.shared.connectedScenes
+            .compactMap { scene in
+                scene as? UIWindowScene
+            }
+            .filter { filter in
+                filter.activationState ==
+                    .foregroundActive
+            }
+            .first?.keyWindow
     }
 }

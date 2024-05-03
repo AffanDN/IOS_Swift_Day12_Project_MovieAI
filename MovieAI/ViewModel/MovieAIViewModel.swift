@@ -34,7 +34,7 @@ class MovieAIViewModel: ObservableObject {
                 "image": "",
                "rating_imdb": "",
                "synopsis": "",
-               "trailer": ""
+               "trailer": "https://www.imdb.com/title/"
               }
             ]
         only. Remove any bacticks
@@ -54,6 +54,7 @@ class MovieAIViewModel: ObservableObject {
             }
             // Proses Decoding
             movie = try JSONDecoder().decode([MovieAIModel].self, from: data)
+            print(movie)
         } catch {
             print("🤬 ERROR: Fetching places: \(error.localizedDescription)")
         }

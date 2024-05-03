@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct MovieRow: View {
     var movieai: MovieAIModel
@@ -35,9 +36,13 @@ struct MovieRow: View {
                 Text(movieai.synopsis)
                     .font(.caption)
                     .lineLimit(3)
-                Text("Trailer: \(movieai.trailer)")
-                    .font(.caption2)
-    
+                Button {
+                    let linkTrailer = SFSafariViewController(url: URL(string: movieai.trailer)!)
+                    UIApplication.shared.firstKeyWindow?.rootViewController?.present(linkTrailer, animated: true)
+                } label: {
+                    Text("▶️ Trailer")
+                        .font(.caption)
+                }
             }
 
         }
