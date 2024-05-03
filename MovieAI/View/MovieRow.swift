@@ -10,20 +10,29 @@ import SafariServices
 
 struct MovieRow: View {
     var movieai: MovieAIModel
+    
     var body: some View {
         HStack (spacing: 16) {
-            AsyncImage(url: URL(string: movieai.image)) { image in
-                image.resizable()
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .frame(width: 120, height: 180)
-                    .scaledToFit()
-            } placeholder: {
-                ZStack {
-                    Color.gray
+            let url = URL(string: movieai.image)
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .empty:
                     WaitingView()
+                case .success(let image):
+                    image.resizable()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .frame(width: 120, height: 180)
+                case .failure(_):
+                    Image(systemName: "film")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 90, height: 80)
+                        .padding()
+                        .foregroundStyle(.indigo)
+                        .opacity(0.8)
+                @unknown default:
+                    fatalError()
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .frame(width: 120, height: 180)
             }
             
             VStack (alignment: .leading, spacing: 8) {
@@ -42,6 +51,7 @@ struct MovieRow: View {
                 } label: {
                     Text("▶️ Trailer")
                         .font(.caption)
+                        .fontWeight(.semibold)
                 }
             }
 
@@ -60,5 +70,6 @@ func WaitingView() -> some View {
         ProgressView()
             .progressViewStyle(.circular)
             .tint(.mint)
+        Text("Fetching Image ...")
     }
 }
